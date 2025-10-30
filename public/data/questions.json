@@ -1,0 +1,45 @@
+
+[
+  {
+    "id": 1,
+    "type": "image-to-word",
+    "question": "ما هي الكلمة التي تطابق هذه الصورة؟",
+    "image": "/assets/Fish.png",
+    "options": ["Fish", "Car", "Lion", "Tree"],
+    "answer": "Fish"
+  },
+  {
+    "id": 1,
+    "type": "image-to-word",
+    "question": "ما هي الكلمة التي تطابق هذه الصورة؟",
+    "image": "/assets/Finger.png",
+    "options": ["Finger", "Car", "Monkey", "Sun"],
+    "answer": "Finger"
+  },
+  {
+    "id": 2,
+    "type": "word-to-image",
+    "question": " اضغط على الصورة لهذه الكلمة:",
+    "word": "Flower",
+    "options": [
+      "/assets/Ball.png",
+      "/assets/Flower.png",
+      "/assets/House.png",
+      "/assets/Cat.png"
+    ],
+    "answer": "/assets/Flower.png"
+  },
+  {
+    "id": 2,
+    "type": "word-to-image",
+    "question": " اضغط على الصورة لهذه الكلمة:",
+    "word": "Fruit",
+    "options": [
+      "/assets/Ice.png",
+      "/assets/Fruit.png",
+      "/assets/House.png",
+      "/assets/Cat.png"
+    ],
+    "answer": "/assets/Fruit.png"
+  }
+]
