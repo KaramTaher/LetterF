@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Home from './Components/Home';
 import Quistions from './Components/Quistions';
+import { SpeedInsights } from "@vercel/speed-insights/react"
+
 function App() {
   const [page, setPage] = useState("home");
   const [leaving, setLeaving] = useState(false);
@@ -40,6 +42,7 @@ function App() {
         </div>
       )}
     </main>
+    <SpeedInsights />
     </>
   )
 }
