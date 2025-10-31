@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body, #root { height: 100%; }
+body { margin: 0;background: linear-gradient(
+  to bottom right,           
+  #FFB8C6,                   
+  #FFF8E1 50%,               
+  #AEE6FF                    
+);}
 @keyframes fadeIn {
   from {
     opacity: 0;

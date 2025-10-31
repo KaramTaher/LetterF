@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SoundButton from "./SoundButton.jsx";
 
 export default function Questions({ onBack }) {
   const [questions, setQuestions] = useState([]);
@@ -8,18 +9,22 @@ export default function Questions({ onBack }) {
   const [finished, setFinished] = useState(false);
 
   const [leaving, setLeaving] = useState(false);
-  const [dir, setDir] = useState(1); 
+  const [dir, setDir] = useState(1);
   const ANIM_MS = 400;
 
   useEffect(() => {
     fetch("/data/questions.json")
       .then((res) => res.json())
       .then((data) => {
-        const shuffledQuestions = shuffle(data).map((q) => ({
+        const first = data[0];
+        const rest = shuffle(data.slice(1));
+
+        const all = [first, ...rest].map((q) => ({
           ...q,
           options: shuffle(q.options),
         }));
-        setQuestions(shuffledQuestions);
+
+        setQuestions(all);
       });
   }, []);
 
@@ -40,11 +45,11 @@ export default function Questions({ onBack }) {
       return;
     }
     setDir(1);
-    setLeaving(true);                 
+    setLeaving(true);
     setTimeout(() => {
-      setIndex((i) => i + 1);         
+      setIndex((i) => i + 1);
       setChoice(null);
-      setLeaving(false);              
+      setLeaving(false);
     }, ANIM_MS);
   };
 
@@ -90,7 +95,9 @@ export default function Questions({ onBack }) {
             >
               Back
             </button>
+            
           </div>
+          <p className="text-sm text-gray-500 mt-4">Fida Qashou</p>
         </div>
       </div>
     );
@@ -101,11 +108,11 @@ export default function Questions({ onBack }) {
       ? "animate-[exitToLeft_0.4s_ease-in_forwards]"
       : "animate-[exitToRight_0.4s_ease-in_forwards]"
     : dir === 1
-    ? "animate-[enterFromRight_0.4s_ease-out_forwards]"
-    : "animate-[enterFromLeft_0.4s_ease-out_forwards]";
+      ? "animate-[enterFromRight_0.4s_ease-out_forwards]"
+      : "animate-[enterFromLeft_0.4s_ease-out_forwards]";
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-100 via-amber-50 to-rose-50 p-6">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-100 via-amber-50 to-rose-50 p-4">
       <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg p-8 w-full max-w-xl text-center">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-xl font-bold text-sky-600">Question {index + 1}</h1>
@@ -123,22 +130,23 @@ export default function Questions({ onBack }) {
           </div>
         </div>
 
-        <h2 className="text-xl font-bold text-slate-800">{q.question}</h2>
+        {/* <h2 className="text-xl font-bold text-slate-800">{q.question}</h2> */}
+        {/* <button className="p-3 rounded-full bg-white shadow-md">
+          <FontAwesomeIcon icon={faVolumeDown} size="xl" className="text-[#00A36C]" />
+        </button> */}
+        <SoundButton src={q.audio} levelKey={index} />
 
-        
+
+
         <div
-          className={`mt-4 rounded-2xl bg-white p-6 ${cardAnimClass}`}
-          key={`${index}-${dir}`} 
+          className={`p-4 ${cardAnimClass}`}
+          key={`${index}-${dir}`}
         >
           <div className="mt-1">
-            {q.type === "image-to-word" ? (
-              <img src={q.image} alt="" className="mx-auto w-56 h-56 object-contain" />
-            ) : (
-              <h2 className="text-4xl font-extrabold text-slate-800">{q.word}</h2>
-            )}
+            <h2 className="text-4xl font-extrabold text-slate-800">{q.word}</h2>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-4 justify-items-center sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-4 justify-items-center sm:grid-cols-2">
             {q.options.map((opt) => {
               const correct = choice && opt === q.answer;
               const wrong = choice && opt === choice && opt !== q.answer;
@@ -148,25 +156,28 @@ export default function Questions({ onBack }) {
                   onClick={() => handleSelect(opt)}
                   disabled={!!choice || leaving}
                   className={`w-40 min-h-14 rounded-xl font-bold shadow-md transition active:scale-95
-                    ${
-                      correct
-                        ? "bg-emerald-500 text-white"
-                        : wrong
+                    ${correct
+                      ? "bg-emerald-500 text-white"
+                      : wrong
                         ? "bg-rose-500 text-white"
                         : "bg-white hover:bg-slate-50 text-slate-800"
                     }`}
                 >
-                  {q.type === "image-to-word" ? (
-                    opt
-                  ) : (
-                    <img src={opt} alt="" className="w-full h-[7rem] object-contain p-2" />
+                  {(
+                    q.type === "word-to-word" ? <span className="text-2xl font-semibold text-[#0094FF] px-4 py-1 bg-[#E8F6FF] rounded-xl shadow-sm">
+                      {opt}
+                    </span> :
+                      <img src={opt} alt="" className="w-full h-[7rem] object-contain p-2" />
                   )}
+
+
+
                 </button>
               );
             })}
           </div>
 
-          <p className="mt-5 font-semibold min-h-6">
+          <p className="mt-4 font-semibold min-h-6">
             {choice && (isCorrect ? "✅ Correct! | احسنت" : "❌ Try again! | حاول مرة أخرى")}
           </p>
         </div>

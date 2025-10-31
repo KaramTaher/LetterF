@@ -25,6 +25,7 @@ export default function StartBox({onStart}) {
                     <path d="M8 5l8 7-8 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
+                <p className="text-sm text-gray-500 mt-4">Fida Qashou</p>
               </div>
     )
 }

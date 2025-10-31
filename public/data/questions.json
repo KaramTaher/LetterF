@@ -2,19 +2,17 @@
 [
   {
     "id": 1,
-    "type": "image-to-word",
-    "question": "ما هي الكلمة التي تطابق هذه الصورة؟",
-    "image": "/assets/Fish.png",
-    "options": ["Fish", "Car", "Lion", "Tree"],
-    "answer": "Fish"
-  },
-  {
-    "id": 1,
-    "type": "image-to-word",
-    "question": "ما هي الكلمة التي تطابق هذه الصورة؟",
-    "image": "/assets/Finger.png",
-    "options": ["Finger", "Car", "Monkey", "Sun"],
-    "answer": "Finger"
+    "type": "word-to-word",
+    "question": " اضغط على الصورة لهذه الكلمة:",
+    "word": "Letter",
+    "options": [
+      "F",
+      "C",
+      "G",
+      "A"
+    ],
+    "answer": "F",
+    "audio": "/assets/letterF.m4a"
   },
   {
     "id": 2,
@@ -27,19 +25,49 @@
       "/assets/House.png",
       "/assets/Cat.png"
     ],
-    "answer": "/assets/Flower.png"
+    "answer": "/assets/Flower.png",
+    "audio": "/assets/Flower.m4a"
   },
   {
-    "id": 2,
+    "id": 3,
     "type": "word-to-image",
     "question": " اضغط على الصورة لهذه الكلمة:",
     "word": "Fruit",
     "options": [
-      "/assets/Ice.png",
+      "/assets/Ball.png",
       "/assets/Fruit.png",
       "/assets/House.png",
       "/assets/Cat.png"
     ],
-    "answer": "/assets/Fruit.png"
+    "answer": "/assets/Fruit.png",
+    "audio": "/assets/Fruit.m4a"
+  },
+  {
+    "id": 4,
+    "type": "word-to-image",
+    "question": " اضغط على الصورة لهذه الكلمة:",
+    "word": "Finger",
+    "options": [
+      "/assets/Ball.png",
+      "/assets/Finger.png",
+      "/assets/House.png",
+      "/assets/Cat.png"
+    ],
+    "answer": "/assets/Finger.png",
+    "audio": "/assets/Finger.m4a"
+  },
+  {
+    "id": 5,
+    "type": "word-to-image",
+    "question": " اضغط على الصورة لهذه الكلمة:",
+    "word": "Fish",
+    "options": [
+      "/assets/Ice.png",
+      "/assets/Fish.png",
+      "/assets/House.png",
+      "/assets/Cat.png"
+    ],
+    "answer": "/assets/Fish.png",
+    "audio": "/assets/Fish.m4a"
   }
 ]

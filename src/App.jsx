@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <main className='min-h-screen w-full bg-gradient-to-br from-[#FFB8C6] via-[#FFF8E1] to-[#AEE6FF] '>
+      <main className='min-h-[dvh] w-full  '>
         {page === "home" ? (
         <div
           className={`${
