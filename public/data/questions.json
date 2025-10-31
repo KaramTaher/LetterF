@@ -20,12 +20,12 @@
     "question": " اضغط على الصورة لهذه الكلمة:",
     "word": "Flower",
     "options": [
-      "/assets/Ball.png",
-      "/assets/Flower.png",
-      "/assets/House.png",
-      "/assets/Cat.png"
+      "/assets/Ball.webp",
+      "/assets/Flower.webp",
+      "/assets/House.webp",
+      "/assets/Cat.webp"
     ],
-    "answer": "/assets/Flower.png",
+    "answer": "/assets/Flower.webp",
     "audio": "/assets/Flower.m4a"
   },
   {
@@ -34,12 +34,12 @@
     "question": " اضغط على الصورة لهذه الكلمة:",
     "word": "Fruit",
     "options": [
-      "/assets/Ball.png",
-      "/assets/Fruit.png",
-      "/assets/House.png",
-      "/assets/Cat.png"
+      "/assets/Ball.webp",
+      "/assets/Fruit.webp",
+      "/assets/House.webp",
+      "/assets/Cat.webp"
     ],
-    "answer": "/assets/Fruit.png",
+    "answer": "/assets/Fruit.webp",
     "audio": "/assets/Fruit.m4a"
   },
   {
@@ -48,12 +48,12 @@
     "question": " اضغط على الصورة لهذه الكلمة:",
     "word": "Finger",
     "options": [
-      "/assets/Ball.png",
-      "/assets/Finger.png",
-      "/assets/House.png",
-      "/assets/Cat.png"
+      "/assets/Ball.webp",
+      "/assets/Finger.webp",
+      "/assets/House.webp",
+      "/assets/Cat.webp"
     ],
-    "answer": "/assets/Finger.png",
+    "answer": "/assets/Finger.webp",
     "audio": "/assets/Finger.m4a"
   },
   {
@@ -62,12 +62,12 @@
     "question": " اضغط على الصورة لهذه الكلمة:",
     "word": "Fish",
     "options": [
-      "/assets/Ice.png",
-      "/assets/Fish.png",
-      "/assets/House.png",
-      "/assets/Cat.png"
+      "/assets/Ice.webp",
+      "/assets/Fish.webp",
+      "/assets/House.webp",
+      "/assets/Cat.webp"
     ],
-    "answer": "/assets/Fish.png",
+    "answer": "/assets/Fish.webp",
     "audio": "/assets/Fish.m4a"
   }
 ]

@@ -1,5 +1,5 @@
 import CurvedCard from './CurvedCard.jsx'
-import sampleImage from '/assets/F-Char.png';
+import sampleImage from '/assets/F-Char.webp';
 import StartBox from './StartBox.jsx';
 
 export default function Home({ onStart }) {
@@ -32,7 +32,7 @@ export default function Home({ onStart }) {
           style={{
             animation: `opacityChar 1s ease-out 2.5s forwards,
                             MoveN 1.5s ease-in-out 3.5s infinite alternate`,
-          }} />
+          }} fetchPriority="high" />
       </div>
 
 
@@ -40,3 +40,4 @@ export default function Home({ onStart }) {
     </div>
   )
 }
+// End of Home.jsx

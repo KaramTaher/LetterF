@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <main className='min-h-[dvh] w-full  '>
+      <main className='min-h-[100dvh] w-full overflow-hidden '>
         {page === "home" ? (
         <div
           className={`${

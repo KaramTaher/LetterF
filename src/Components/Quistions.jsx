@@ -167,7 +167,7 @@ export default function Questions({ onBack }) {
                     q.type === "word-to-word" ? <span className="text-2xl font-semibold text-[#0094FF] px-4 py-1 bg-[#E8F6FF] rounded-xl shadow-sm">
                       {opt}
                     </span> :
-                      <img src={opt} alt="" className="w-full h-[7rem] object-contain p-2" />
+                      <img src={opt} alt="" className="w-full h-[7rem] object-contain p-2" loading="lazy" decoding="async" />
                   )}
 
 
@@ -202,3 +202,5 @@ function shuffle(arr) {
   }
   return copy;
 }
+
+// End of Questions.jsx
