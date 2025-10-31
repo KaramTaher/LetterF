@@ -4,7 +4,7 @@ import StartBox from './StartBox.jsx';
 
 export default function Home({ onStart }) {
   return (
-    <div className='w-full h-full relative flex flex-col items-center '>
+    <div className='w-full min-h-[100dvh] relative flex flex-col items-center '>
       <CurvedCard position="right" />
 
       <CurvedCard position="left" />
